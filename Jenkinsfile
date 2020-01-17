@@ -17,8 +17,8 @@ pipeline {
 
   environment {
     //Use Pipeline Utility Steps plugin to read information from pom.xml into env variables
-    IMAGE = 'marsmike/testing'
-    VERSION = '1.0'
+    IMAGE = readMavenPom().getArtifactId()
+    VERSION = readMavenPom().getVersion()
   }
 
   stages {
