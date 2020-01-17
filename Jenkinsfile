@@ -32,6 +32,7 @@ pipeline {
            */
           reuseNode true
           image 'maven:3.5.0-jdk-8'
+          args '-v /root/.m2:/root/.m2'
         }
       }
       steps {
@@ -70,7 +71,7 @@ pipeline {
             SONAR = credentials('sonar')
           }
           steps {
-            sh 'mvn sonar:sonar -Dsonar.login=$SONAR_PSW'
+            sh 'mvn sonar:sonar -Dsonar.host.url=https://sonar.kube.im -Dsonar.login=$SONAR_PSW'
           }
         }
       }
