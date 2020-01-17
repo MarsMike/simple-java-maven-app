@@ -71,7 +71,10 @@ pipeline {
             SONAR = credentials('sonar')
           }
           steps {
-            sh 'mvn sonar:sonar -Dsonar.host.url=https://sonar.kube.im -Dsonar.login=$SONAR_PSW'
+            sh 'mvn sonar:sonar \
+                  -Dsonar.projectKey=simple-java-maven-app \
+                  -Dsonar.host.url=https://sonar.kube.im \
+                  -Dsonar.login=0b50d46a7587f219dfdad9b705e5e7e75ebe9b9f'
           }
         }
       }
