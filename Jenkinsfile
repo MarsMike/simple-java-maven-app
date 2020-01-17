@@ -45,6 +45,7 @@ pipeline {
         success {
           // we only worry about archiving the jar file if the build steps are successful
           archiveArtifacts(artifacts: '**/target/*.jar', allowEmptyArchive: true)
+          junit 'target/surefire-reports/*.xml'
         }
       }
     }
