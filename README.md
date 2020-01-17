@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonar.kube.im/api/project_badges/measure?project=simple-java-maven-app&metric=alert_status)](https://sonar.kube.im/dashboard?id=simple-java-maven-app)
+
 # simple-java-maven-app
 
 This repository is for the
