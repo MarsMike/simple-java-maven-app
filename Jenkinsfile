@@ -92,7 +92,7 @@ pipeline {
         sh """
           docker build -t ${REPO}/${IMAGE} .
           docker tag ${REPO}/${IMAGE} ${REPO}/${IMAGE}:${VERSION}
-          docker push ${REP}/${IMAGE}:${VERSION}
+          docker push ${REPO}/${IMAGE}:${VERSION}
         """
       }
     }
