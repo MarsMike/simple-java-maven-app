@@ -17,6 +17,7 @@ pipeline {
 
   environment {
     //Use Pipeline Utility Steps plugin to read information from pom.xml into env variables
+    REPO = 'marsmike'
     IMAGE = readMavenPom().getArtifactId()
     VERSION = readMavenPom().getVersion()
   }
@@ -89,9 +90,9 @@ pipeline {
          * and load them with 'libaryResource'
          */
         sh """
-          docker build -t ${IMAGE} .
-          docker tag ${IMAGE} ${IMAGE}:${VERSION}
-          docker push ${IMAGE}:${VERSION}
+          docker build -t ${REPO}/${IMAGE} .
+          docker tag ${REPO}/${IMAGE} ${REPO}/${IMAGE}:${VERSION}
+          docker push ${REP}/${IMAGE}:${VERSION}
         """
       }
     }
